@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=9" >
+
+<title>STATS WEIBULL PLOT Extension Command</title>
+
+<link rel="stylesheet" type="text/css" href="extsyntax.css" />
+
+
+
+
+
+</head>
+
+<body>
+<h1>STATS WEIBULL PLOT Extension Command</h1>
+
+<p>Calculate and display a three-parameter Weibull plot</p>
+<div class="syntax">
+<p>STATS WEIBULL PLOT<br/>
+TIME = <em>variable</em><sup>&#42;</sup><br/>
+COUNT = <em>variable</em><br/>
+TYPE = <em>variable</em><br/>
+FAILURE=&ldquo;<em>failure string</em>&rdquo;<br/>
+SUSPENSION = &ldquo;<em>suspension string</em>&rdquo;<br/>
+ITEMNAME = <em>variable</em></p>
+
+<p>/OPTIONS<br/>
+TITLE = &ldquo;<em>chart title</em>&rdquo;<br/>
+ANNOTATION = &ldquo;chart annotation&rdquo;</p>
+
+<p>/SAVE<br/>
+GRAPHDS = <em>dataset</em>
+TEXTFILE = "<em>file specification</em>"</p>
+FILEMODE = OVERWRITE<sup>&#42;&#42;</sup> or APPEND
+</p>
+
+<p>/HELP</p>
+
+<p><sup>&#42;</sup> Required<br/>
+<sup>&#42;&#42;</sup> Default</p>
+</div>
+<p>STATS WEIBULL PLOT /HELP prints this information and does nothing else.</p>
+
+
+<pre class="example"><code>STATS WEIBULL PLOT TIME=time TYPE=FailOrSusp COUNT=number.
+</code></pre>
+
+<p><strong>TIME</strong> specifies the time of the observation from 0.  This is not an SPSS time
+variable.  It could be measured in time units such as weeks, but it could also
+be measured in terms of a measure such as number of usage cycles.  The
+values must be positive.</p>
+
+<p><strong>COUNT</strong> specifies the count for each time period.  If no COUNT variable is
+specified, each case counts as one.</p>
+
+<p><strong>TYPE</strong> specifies whether the case represents a failure or
+a suspension, i.e. right-censored observation.  If it is omitted, all
+cases are considered to be failures.</p>
+
+<p><strong>FAILURE</strong> and <strong>SUSPENSION</strong> specify the codes for the TYPE variable 
+that define the type ofthe case.  They default to <em>&ldquo;F&rdquo;</em> and <em>&ldquo;S&rdquo;</em>, respectively.
+Cases that do not match either of these codes are discarded from the analysis.</p>
+
+<p><strong>ITEMNAME</strong> can specifiy a variable containing the name of the item being
+processed.  It will be used for labelling the output.</p>
+
+<h2>OPTIONS</h2>
+
+<p><strong>TITLE</strong> specifies a title for the chart.  If the text contains <em>)ID</em> and there
+is an itemname, the itemname will replace that text.</p>
+
+<p><strong>ANNOTATION</strong> specifies an annotation that appears on the X axis.  The
+date and time are automatically appended.</p>
+
+<h2>SAVE</h2>
+
+<p><strong>GRAPHDS</strong> specifies a dataset name.  If supplied, the dataset
+containing the points plotted in the chart is retained under that name.</p>
+
+<p><strong>TEXTFILE</strong> specifies a text file to which the points
+plotted in the chart, the Rsq, Beta, and Eta values along with some
+other variables will be written.  The text file is in csv
+format without a variable names header.  The contents are the same as 
+the GRAPHDS contents.</p>
+
+<p><strong>FILEMODE</strong> specifies whether the TEXTFILE is overwritten or
+new results are appended.  If appending, the structure, particularly the presence
+of an ID variable, must be the same.</p>
+
+<p>&copy; Copyright IBM Corp. 1989, 2015</p>
+
+</body>
+
+</html>
+
