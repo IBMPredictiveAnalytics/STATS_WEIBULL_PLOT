@@ -1,0 +1,109 @@
+#/***********************************************************************
+# * Licensed Materials - Property of IBM 
+# *
+# * IBM SPSS Products: Statistics Common
+# *
+# * (C) Copyright IBM Corp. 1989, 2014
+# *
+# * US Government Users Restricted Rights - Use, duplication or disclosure
+# * restricted by GSA ADP Schedule Contract with IBM Corp. 
+# ************************************************************************/
+
+# NLS_ENCODING=UTF-8
+# IBMUPYTH
+
+
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR ORGANIZATION
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2014-05-21 17:51+China Standard Time\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: ENCODING\n"
+"Generated-By: pygettext.py 1.5\n"
+
+
+#: STATS_WEIBULL_PLOT.py:90 STATS_WEIBULL_PLOT.py:315
+msgid "Weibull Plot"
+msgstr ""
+"Weibull 도표"
+
+#: STATS_WEIBULL_PLOT.py:178
+msgid "All cases were filtered out by selection criteria or there was no data."
+msgstr ""
+"모든 케이스가 선택기준에 따라 필터링되었거나 데이터가 없습니다."
+
+#: STATS_WEIBULL_PLOT.py:317
+msgid "Summary Failure Statistics: %s"
+msgstr ""
+"요약 실패 통계량: %s"
+
+#: STATS_WEIBULL_PLOT.py:320
+msgid "Summary Failure Statistics"
+msgstr ""
+"요약 실패 통계량"
+
+#: STATS_WEIBULL_PLOT.py:326
+msgid "Beta"
+msgstr ""
+"베타"
+
+#: STATS_WEIBULL_PLOT.py:326
+msgid "Eta"
+msgstr ""
+"에타"
+
+#: STATS_WEIBULL_PLOT.py:326
+msgid "Failures"
+msgstr ""
+"실패"
+
+#: STATS_WEIBULL_PLOT.py:326
+msgid "R"
+msgstr ""
+"R"
+
+#: STATS_WEIBULL_PLOT.py:326
+msgid "Suspensions"
+msgstr ""
+"일시중단"
+
+#: STATS_WEIBULL_PLOT.py:326
+msgid "Total"
+msgstr ""
+"총계"
+
+#: STATS_WEIBULL_PLOT.py:328 STATS_WEIBULL_PLOT.py:330
+msgid " (%s)"
+msgstr ""
+"(%s)"
+
+#: STATS_WEIBULL_PLOT.py:342
+msgid "Statistics"
+msgstr ""
+"통계량2"
+
+#: STATS_WEIBULL_PLOT.py:378
+msgid ""
+"The required template was not found or the required Statistics update is not installed.\n"
+"            This procedure requires the Graphboard template Weibull.viztemplate.  It also requires at least Statistics version 20 \n"
+"            with fixpack1 or a later version.  For Statistics 19, it needs the hotfix for the cloglog scale."
+msgstr ""
+"필요한 템플리트가 없거나 필요한 Statistics 업데이트가 설치되지 않았습니다.\n"
+"            이 프로시저는 Graphboard 템플리트 Weibull.viztemplate가 필요합니다. 또한 최소 Statistics 버전 20 \n"
+"            fixpack1 이상 버전이 필요합니다. Statistics 19의 경우 C로그로그 척도에 대한 긴급 수정이 필요합니다."
+
+#: STATS_WEIBULL_PLOT.py:417
+msgid "---"
+msgstr ""
+"---"
+
+
+
