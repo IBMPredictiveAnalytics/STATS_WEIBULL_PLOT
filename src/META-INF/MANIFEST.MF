@@ -2,8 +2,8 @@ Name: STATS WEIBULL PLOT
 Dialog-Specs: STATS_WEIBULL_PLOT.spd
 Command-Specs: STATS_WEIBULL_PLOT.xml
 Code-Files: STATS_WEIBULL_PLOT.py
-Misc-Files: Weibull.viztemplate,extsyntax.css,markdown.html,IBMdialogi
- con.png
+Misc-Files: extsyntax.css,Weibull.viztemplate,IBMdialogicon.png,markdo
+ wn.html
 Summary: Create Weibull probability plot for failure data
 Description: This procedure creates a Weibull probability plot for dat
  a on item failures and suspensions.  It requires the Graphboard templ
@@ -12,9 +12,11 @@ Description: This procedure creates a Weibull probability plot for dat
  rsion 20 plus Fixpack1.  It can be used with version 19 if the hotfix
   for the cloglog scale is installed
 Author: JKP, IBM SPSS, JC, IBM SPSS
-Version: 1.1.7
+Version: 1.2.1
 Product-Version: 19
 Date: 9/6/12
+Product-Version-Maximum: 99
 Categories: graphics Weibull
 Plugins: Python
+Python-Version: 2
 Translation-Catalogues: lang

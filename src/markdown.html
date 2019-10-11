@@ -33,7 +33,8 @@ TITLE = &ldquo;<em>chart title</em>&rdquo;<br/>
 ANNOTATION = &ldquo;chart annotation&rdquo;</p>
 
 <p>/SAVE<br/>
-GRAPHDS = <em>dataset</em>
+GRAPHDS = <em>dataset</em><br/>
+GRAPHFILE = "<em>file specification</em>"<br/>
 TEXTFILE = "<em>file specification</em>"</p>
 FILEMODE = OVERWRITE<sup>&#42;&#42;</sup> or APPEND
 </p>
@@ -81,6 +82,10 @@ date and time are automatically appended.</p>
 <p><strong>GRAPHDS</strong> specifies a dataset name.  If supplied, the dataset
 containing the points plotted in the chart is retained under that name.</p>
 
+<p><strong>GRAPHFILE</strong> specifies a file name (include the extension).  If supplied, an sav
+file containing the points plotted in the chart is written.
+The contents are the same as for GRAPHDS.  The choice is a matter of convenience.</p>
+
 <p><strong>TEXTFILE</strong> specifies a text file to which the points
 plotted in the chart, the Rsq, Beta, and Eta values along with some
 other variables will be written.  The text file is in csv
@@ -89,9 +94,9 @@ the GRAPHDS contents.</p>
 
 <p><strong>FILEMODE</strong> specifies whether the TEXTFILE is overwritten or
 new results are appended.  If appending, the structure, particularly the presence
-of an ID variable, must be the same.</p>
+of an ID variable, must be the same as the previous contents.</p>
 
-<p>&copy; Copyright IBM Corp. 1989, 2015</p>
+<p>&copy; Copyright IBM Corp. 1989, 2016</p>
 
 </body>
 
