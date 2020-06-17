@@ -3,7 +3,7 @@
 # *
 # * IBM SPSS Products: Statistics Common
 # *
-# * (C) Copyright IBM Corp. 2012, 2019
+# * (C) Copyright IBM Corp. 1989, 2020
 # *
 # * US Government Users Restricted Rights - Use, duplication or disclosure
 # * restricted by GSA ADP Schedule Contract with IBM Corp. 
@@ -477,7 +477,7 @@ def savetext(filename, filemode):
             for item in case:
                 if item is None:
                     lcase.append("")
-                elif isinstance(item, basestring):
+                elif isinstance(item, str):
                     lcase.append(spssaux._smartquote(item.rstrip()))
                 else:
                     lcase.append(str(item))
@@ -489,7 +489,7 @@ def savetext(filename, filemode):
 def Run(args):
     """Execute the STATS WEIBULL PLOT command"""
 
-    args = args[args.keys()[0]]
+    args = args[list(args.keys())[0]]
     ###print args   #debug
 
     ###debugging
@@ -531,7 +531,7 @@ def Run(args):
 
     copyTemplate("Weibull")
         # A HELP subcommand overrides all else
-    if args.has_key("HELP"):
+    if "HELP" in args:
         #print helptext
         helper()
     else:
@@ -584,7 +584,7 @@ def helper():
     # webbrowser.open seems not to work well
     browser = webbrowser.get()
     if not browser.open_new(helpspec):
-        print("Help file not found:" + helpspec)
+        print(("Help file not found:" + helpspec))
 try:    #override
     from extension import helper
 except:

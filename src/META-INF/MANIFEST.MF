@@ -12,11 +12,10 @@ Description: This procedure creates a Weibull probability plot for dat
  rsion 20 plus Fixpack1.  It can be used with version 19 if the hotfix
   for the cloglog scale is installed
 Author: JKP, IBM SPSS, JC, IBM SPSS
-Version: 1.2.1
-Product-Version: 19
+Version: 2.0.0
+Product-Version: 24
 Date: 9/6/12
-Product-Version-Maximum: 99
 Categories: graphics Weibull
 Plugins: Python
-Python-Version: 2
+Python-Version: 3
 Translation-Catalogues: lang
