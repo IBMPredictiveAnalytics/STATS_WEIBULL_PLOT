@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content=
+  "text/html; charset=utf-8">
+<title>Gráfico de probabilidade de Weibull</title>
+  <style type="text/css">
+
+  <!-- 
+
+  H1 {font-weight:bold; color:#006699; font-size:125%; }
+  H2 {font-weight:bold; color:#006699; font-size:110%; }
+  TABLE {font-size:100%;}
+
+  /* paragraph tags */
+  .step {text-indent: -1.3em; margin-left:1.3em; margin-top: 0px;}
+  .menuselection {margin-left:10px}
+  .bullet {list-style-type: disc;margin-top:12px; margin-left:36px; text-indent:-1em; }
+  .codeblock {background-color: #ffffe6; display:block; margin-left:5px; padding:5px;}
+
+  /* inline tags */
+  .screen {font-weight:bold; color:#408080}                       /*** used refer to on-screen text ***/
+  .name {font-style: italic}                                                       /*** used to tag names, such as variable names, file names, and so forth ***/
+  .runinhead {font-weight: bold} 
+  .superscript {vertical-align:super; font-size:80%}
+  .subscript {vertical-align:sub; font-size:80%}
+
+
+  --> 
+  </style>
+</head>
+<body>
+<h1>Gráfico de probabilidade de Weibull</h1>
+Este procedimento produz um gráfico de Weibull para um conjunto de dados de falha e de suspensão.  Cada caso inclui um valor de tempo, um valor de tipo (falha ou suspensão) e uma contagem de casos desse tempo e contagem.
+A suspensão representa os casos que ainda não falharam, ou seja, os dados estão censurados à direita.
+
+<p><span class="runinhead">Tempo</span> Selecione a variável que indica o tempo para este caso.
+Tempos devem ser positivos.  Eles podem indicar as quantidades do calendário padrão, como meses, ou podem ser em termos de quantidades de engenharia, como ciclos de uso.  Não é uma variável de tempo do SPSS.</p>
+
+<p><span class="runinhead">Contagens</span> Opcionalmente, selecione uma variável que retém a contagem de instâncias para este caso.  Se omitida, uma contagem igual a 1 será assumida.</p>
+
+<p><span class="runinhead">Falhas e suspensões</span> Opcionalmente, especifique uma variável para indicar o tipo do caso: falhas ou suspensões.
+Se uma variável não for selecionada, todos os casos serão assumidos como falhas.</p>
+<p><span class="runinhead">Código de falha e código de suspensão</span></p> Indicam a sequência de caracteres que indica se o caso é uma falha ou uma suspensão.
+<p class="bullet">* Os casos com quaisquer outros valores são descartados da análise.</p>
+<p><span class="runinhead">Variável de ID</span> Opcionalmente, especifique uma variável de sequência de caracteres cujo valor (primeiro caso) deve ser usado para rotular a saída.</p>
+
+<h2>Opções</h2>
+<p><span class="runinhead">Título do gráfico</span> Especifique um título para o gráfico.
+Se o texto )ID ocorrer no texto do título e uma variável de ID for especificada, o valor dessa variável será inserido no título do gráfico neste ponto.</p>
+<p><span class="runinhead">Anotação</span> Especifique uma anotação para aparecer no eixo X juntamente com o rótulo de tempo.  A data e a hora atuais são automaticamente anexadas à anotação.</p>
+<h2>Salvar</h2>
+<p><span class="runinhead">Nome do conjunto de dados do gráfico</span> Especifique um nome do conjunto de dados para produzir um conjunto de dados que contenha os dados usados para criar o gráfico.</p>
+
+<p><span class="runinhead">Arquivo Sav de dados gráficos</span>: especifica um nome de arquivo, incluindo a extensão sav, para produzir um arquivo de dados contendo os dados plotados no gráfico.  O conteúdo será o mesmo do conjunto de dados.</p>
+
+<p><span class="runinhead">Arquivo de texto de dados gráficos</span>: especifica um nome de arquivo para produzir um Arquivo no formato csv contendo os dados plotados no gráfico.</p>
+
+<p><span class="runinhead">Modo de arquivo de texto</span>: se estiver criando um arquivo de texto, especifique se irá sobrescrever o conteúdo anterior ou anexar ao arquivo.
+Se anexar, a estrutura, incluindo a presença ou ausência de uma variável id, deverá ser igual ao conteúdo anterior.</p>
+
+
+<h2>Recursos adicionais</h2>
+<p>
+Este diálogo gera sintaxe para o comando de extensão STATS WEIBULL PLOT. Para exibir ajuda para este comando, execute a seguinte sintaxe:
+</p>
+<p class="codeblock">STATS WEIBULL PLOT /HELP.</p>
+
+
+<h2>Requisitos</h2>
+Este procedimento requer o SPSS Statistics versão 20 com FixPack1 ou posterior.  Ele também pode ser executado com um hotfix de gráfico para a Versão 19.  Entre em contato com o Suporte técnico para obter o hotfix.
+<p>
+O procedimento requer o Python Essentials e o comando de extensão STATS WEIBULL PLOT.  Observe que a instalação da extensão requer uma etapa extra para configurar o arquivo de modelo de diagrama.  Consulte as instruções no arquivo leia-me de extensão, para obter detalhes.
+</p>
+</body>
+<p style="font-size:80%;"> Copyright IBM Corp. 2012, 2016</p>
+</html>

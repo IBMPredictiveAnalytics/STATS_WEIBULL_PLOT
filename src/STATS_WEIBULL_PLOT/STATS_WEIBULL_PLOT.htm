@@ -1,0 +1,104 @@
+<html>
+<head>
+<title>Weibull Probability Plot</title>
+<STYLE TYPE="text/css"> 
+<!-- 
+
+H1 {font-weight:bold; color:#006699; font-family:Verdana, Arial, sans-serif;font-size:125%; }
+H2 {font-weight:bold; color:#006699; font-family:Verdana, Arial, sans-serif;font-size:110%; }
+BODY {font-family:Verdana, Arial, sans-serif;font-size:80%; }
+TABLE {font-size:100%;font-family:Verdana, Arial, sans-serif;}
+
+/* paragraph tags */
+.step {text-indent: -1.3em; margin-left:1.3em; margin-top: 0px;}
+.step-glyph { font-family: Arial, Helvetica, sans-serif; }
+.menuselection {margin-left:10px}
+.bullet {list-style-type: disc;margin-top:12px; margin-left:36px; text-indent:-1em; }
+.codeblock {background-color: #ffffe6; display:block; margin-left:5px; padding:5px;font-family:"courier new",monospace; }
+
+/* inline tags */
+.code {font-family: Courier,fixed pitch;}                           /*** used to tag pieces of code (syntax, Python, R, HTML, etc.)   ***/
+.screen {font-weight:bold; color:#408080}                       /*** used refer to on-screen text ***/
+.name {font-style: italic}                                                       /*** used to tag names, such as variable names, file names, and so forth ***/
+.runinhead {font-weight: bold} 
+.superscript {vertical-align:super; font-size:80%}
+.subscript {vertical-align:sub; font-size:80%}
+.symbol {font-family: Symbol}
+
+--> 
+</STYLE>
+</head>
+<body>
+<h1>Weibull Probability Plot</h1>
+This procedure produces a Weibull plot for a set of failure and
+suspension data.  Each case includes a time value, a type value
+(failure or suspension), and a count of cases of that time and count.
+A suspension represents cases that have not yet failed, i.e., the data
+are right censored.
+
+<p><span class="runinhead">Time</span> 
+Select the variable that indicates the time for this case.
+Times must be positive.  They may indicate standard calendar
+quantities such as months, or they may be in terms of engineering
+quantities such as usage cycles.  This is not an SPSS time variable.
+
+<p><span class="runinhead">Counts</span> Optionally
+select a variable holding the count of instances for this case.  If
+omitted, a count of 1 is assumed.
+
+<p><span class="runinhead">Failures and Suspensions</span> Optionally
+specify a variable to indicate the type of the case: failures or suspensions.
+If a variable is not selected, all cases are assumed to be failures.
+<p><span class="runinhead">Failure Code and Suspension Code</span>
+Indicate the string that indicates whether the case is a failure or suspension.
+<p class="bullet">&bull; Cases with any other values are discarded from the
+analysis.
+<p><span class="runinhead">ID Variable</span> Optionally specify a string variable
+whose value (first case) should be used to label the output.
+
+<h2>Options</h2>
+<p><span class="runinhead">Chart Title</span> Specify a title for the chart.
+If the text )ID occurs in the title text and an id variable is specified, the
+value of that variable will be inserted into the chart title at that point.
+<p><span class="runinhead">Annotation</span> Specify an annotation to
+appear on the X axis along with the time label.  The current date and time are
+automatically appended to the annotation.
+<h2>Save</h2>
+<p><span class="runinhead">Graph Data Dataset Name</span> Specify
+a dataset name in order to produce a dataset containing the data
+plotted in the graph.</p>
+
+<p><span class="runinhead">Graph Data Sav File</span> Specify
+a file name, including the sav extension, in order to produce a data file containing the data
+plotted in the graph.  The contents will be the same as the dataset.</p>
+
+<p><span class="runinhead">Graph Data Text File</span> Specify
+a file name in order to produce a file in csv format containing the data
+plotted in the graph.</p>
+
+<p><span class="runinhead">Text File Mode</span> If creating a text file,
+specify whether to overwrite previous contents or append to the file.
+If appending, the structure, including the presence or absence of an id
+variable, must be the same as the previous contents.</p>
+
+
+<h2>Additional Features</h2>
+<p>
+This dialog generates syntax for the STATS WEIBULL PLOT extension command. To display help for this command,
+run the following syntax:
+</p>
+<p class="codeblock">STATS WEIBULL PLOT /HELP.</p>
+
+
+<h2>Requirements</h2>
+This procedure requires SPSS Statistics version 20 with FixPack1 or later.  It can
+also be run with a graphics hot fix for Version 19.  Contact Technical Support for the hotfix.
+<p>
+The procedure requires the Python Essentials
+and the STATS WEIBULL PLOT extension command.  Note that installing the extension
+requires an extra step to set up the chart template file.  See the instructions in
+the extension readme file for details.
+
+<br/>
+<hr/>
+<p style="font-family:Verdana, Arial, sans-serif;font-size:80%;"> ©Copyright IBM Corp. 2012, 2016</p>

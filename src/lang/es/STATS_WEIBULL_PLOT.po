@@ -1,109 +1,71 @@
-#/***********************************************************************
-# * Licensed Materials - Property of IBM 
-# *
-# * IBM SPSS Products: Statistics Common
-# *
-# * (C) Copyright IBM Corp. 1989, 2014
-# *
-# * US Government Users Restricted Rights - Use, duplication or disclosure
-# * restricted by GSA ADP Schedule Contract with IBM Corp. 
-# ************************************************************************/
-
-# NLS_ENCODING=UTF-8
-# IBMUPYTH
-
-
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR ORGANIZATION
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Translations template for PROJECT.
+# Copyright (C) 2021 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
 #
+
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-05-21 17:51+China Standard Time\n"
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2021-10-11 00:34-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
-"Content-Transfer-Encoding: ENCODING\n"
-"Generated-By: pygettext.py 1.5\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Globalization Pipeline\n"
 
-
-#: STATS_WEIBULL_PLOT.py:90 STATS_WEIBULL_PLOT.py:315
 msgid "Weibull Plot"
-msgstr ""
-"Gráfico Weibull"
+msgstr "Gráfico Weibull"
 
-#: STATS_WEIBULL_PLOT.py:178
 msgid "All cases were filtered out by selection criteria or there was no data."
 msgstr ""
-"Se han filtrado todos los casos por criterio de selección o bien no había datos"
+"Se han filtrado todos los casos por criterio de selección o bien no había "
 
-#: STATS_WEIBULL_PLOT.py:317
 msgid "Summary Failure Statistics: %s"
-msgstr ""
-"Resumen de estadísticos de errores: %s"
+msgstr "Resumen de estadísticos de errores: %s"
 
-#: STATS_WEIBULL_PLOT.py:320
 msgid "Summary Failure Statistics"
-msgstr ""
-"Resumen de estadísticos de errores"
+msgstr "Resumen de estadísticos de errores"
 
-#: STATS_WEIBULL_PLOT.py:326
 msgid "Beta"
-msgstr ""
-"Beta"
+msgstr "Beta"
 
-#: STATS_WEIBULL_PLOT.py:326
 msgid "Eta"
-msgstr ""
-"Eta"
+msgstr "Eta"
 
-#: STATS_WEIBULL_PLOT.py:326
 msgid "Failures"
-msgstr ""
-"Errores"
+msgstr "Errores"
 
-#: STATS_WEIBULL_PLOT.py:326
 msgid "R"
-msgstr ""
-"R"
+msgstr "R"
 
-#: STATS_WEIBULL_PLOT.py:326
 msgid "Suspensions"
-msgstr ""
-"Suspensiones"
+msgstr "Suspensiones"
 
-#: STATS_WEIBULL_PLOT.py:326
 msgid "Total"
-msgstr ""
-"Total"
+msgstr "Total"
 
-#: STATS_WEIBULL_PLOT.py:328 STATS_WEIBULL_PLOT.py:330
 msgid " (%s)"
-msgstr ""
-"(%s)"
+msgstr "(%s)"
 
-#: STATS_WEIBULL_PLOT.py:342
 msgid "Statistics"
-msgstr ""
-"Estadísticos"
+msgstr "Estadísticos"
 
-#: STATS_WEIBULL_PLOT.py:378
 msgid ""
-"The required template was not found or the required Statistics update is not installed.\n"
-"            This procedure requires the Graphboard template Weibull.viztemplate.  It also requires at least Statistics version 20 \n"
-"            with fixpack1 or a later version.  For Statistics 19, it needs the hotfix for the cloglog scale."
+"The required template was not found or the required Statistics update is not "
+"installed.\n            This procedure requires the Graphboard template "
+"Weibull.viztemplate.  It also requires at least Statistics version 20 \n"
+"            with fixpack1 or a later version.  For Statistics 19, it needs the"
+" hotfix for the cloglog scale."
 msgstr ""
-"No se ha encontrado la plantilla necesaria o bien no se ha instalado la actualización de Statistics necesaria.\n"
-"            Este procedimiento requiere la plantilla de Graphboard Weibull.viztemplate.  También requiere como mínimo Statistics versión 20 \n"
-"            con el fixpack1 o posterior.  Si es Statistics 19, se requiere el hotfix para la escala cloglog."
+"No se ha encontrado la plantilla necesaria o bien no se ha instalado la "
+"actualización de Statistics necesaria.\n            Este procedimiento "
+"requiere la plantilla de Graphboard Weibull.viztemplate.  También requiere "
+"como mínimo Statistics versión 20 \n            con el fixpack1 o posterior.  "
+"Si es Statistics 19, se requiere el hotfix para la escala cloglog."
 
-#: STATS_WEIBULL_PLOT.py:417
 msgid "---"
-msgstr ""
-"---"
-
-
-
+msgstr "---"

@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content=
+  "text/html; charset=utf-8">
+<title>Weibull-Wahrscheinlichkeitsdiagramm</title>
+  <style type="text/css">
+
+  <!-- 
+
+  H1 {font-weight:bold; color:#006699; font-size:125%; }
+  H2 {font-weight:bold; color:#006699; font-size:110%; }
+  TABLE {font-size:100%;}
+
+  /* paragraph tags */
+  .step {text-indent: -1.3em; margin-left:1.3em; margin-top: 0px;}
+  .menuselection {margin-left:10px}
+  .bullet {list-style-type: disc;margin-top:12px; margin-left:36px; text-indent:-1em; }
+  .codeblock {background-color: #ffffe6; display:block; margin-left:5px; padding:5px;}
+
+  /* inline tags */
+  .screen {font-weight:bold; color:#408080}                       /*** used refer to on-screen text ***/
+  .name {font-style: italic}                                                       /*** used to tag names, such as variable names, file names, and so forth ***/
+  .runinhead {font-weight: bold} 
+  .superscript {vertical-align:super; font-size:80%}
+  .subscript {vertical-align:sub; font-size:80%}
+
+
+  --> 
+  </style>
+</head>
+<body>
+<h1>Weibull-Wahrscheinlichkeitsdiagramm</h1>
+Diese Prozedur erstellt ein Weibull-Diagramm für ein Set von Fehler- und Suspensionsdaten.  Jeder Fall umfasst einen Zeitwert, einen Typwert
+(Fehler oder Suspension) und die Anzahl der Fälle mit dieser Zeit und dieser Anzahl.
+Bei einer Suspension handelt es sich um Fälle, die noch nicht fehlgeschlagen sind,
+aber deren Daten rechtszensiert wurden.
+
+<p><span class="runinhead">Zeit</span>
+Wählen Sie die Variable aus, die die Zeit für diesen Fall angibt.
+Die Zeiten müssen positiv sein.  Sie können in den üblichen Kalendereinheiten wie Monate
+oder in technischen Mengeneinheiten wie Nutzungszyklen ausgedrückt werden.  Dabei handelt es sich nicht um eine SPSS-Zeitvariable.</p>
+
+<p><span class="runinhead">Anzahl</span> Wählen Sie optional
+eine Variable aus, die die Anzahl der Instanzen für diesen Fall enthält.  Wenn
+keine Angabe gemacht wird, wird eine Anzahl von 1 angenommen.</p>
+
+<p><span class="runinhead">Fehler und Suspensionen</span> Geben Sie optional eine Variable an, um den Typ des Falls (Fehler oder Suspensionen) anzugeben.
+Wenn keine Variable ausgewählt wird, werden alle Fälle als Fehler eingestuft.</p>
+<p><span class="runinhead">Fehlercode und Suspensionscode</span></p>
+Geben Sie die Zeichenfolge an, die darauf hinweist, ob der Fall als Fehler oder Suspension zu werten ist.
+<p class="bullet">* Fälle mit anderen Werten werden aus der Analyse
+gelöscht.</p>
+<p><span class="runinhead">ID-Variable</span> Geben Sie optional eine Zeichenfolgevariable an,
+deren Wert (erster Fall) zur Beschriftung der Ausgabe verwendet werden soll.</p>
+
+<h2>Optionen</h2>
+<p><span class="runinhead">Diagrammtitel</span> Geben Sie einen Titel für das Diagramm an.
+Wenn der Text )ID im Titeltext vorkommt und eine ID-Variable angegeben ist,
+wird an dieser Stelle im Diagrammtitel der Wert dieser Variable eingefügt.</p>
+<p><span class="runinhead">Anmerkung</span> Geben Sie eine Anmerkung an, die
+zusammen mit der Zeitbeschriftung auf der X-Achse dargestellt werden soll. An die Anmerkung werden automatisch die aktuelle Datums- und Zeitangabe angehängt.</p>
+<h2>Speichern</h2>
+<p><span class="runinhead">Name des Datasets für Diagrammdaten</span> Geben Sie einen Datasetnamen an,
+damit ein Dataset erstellt wird, das die im Diagramm dargestellten Daten enthält.</p>
+
+<p><span class="runinhead">sav-Datei für Diagrammdaten</span> Geben Sie einen Dateinamen mit der Erweiterung sav an,
+damit eine Datendatei erstellt wird, die die im Diagramm dargestellten Daten enthält.
+Der Inhalt ist derselbe wie beim Dataset.</p>
+
+<p><span class="runinhead">Textdatei für Diagrammdaten</span> Geben Sie einen Dateinamen an,
+um eine Datei im CSV-Format zu erstellen, die die im Diagramm dargestellten Daten enthält.</p>
+
+<p><span class="runinhead">Textdateimodus</span> Wenn Sie eine Textdatei erstellen, geben Sie an,
+ob der vorherige Inhalt überschrieben oder an die Datei angehängt werden soll.
+Beim Anhängen muss die Struktur, einschließlich des Vorhandenseins oder Nichtvorhandenseins
+einer id-Variablen, mit dem vorherigen Inhalt übereinstimmen.</p>
+
+
+<h2>Weitere Funktionen</h2>
+<p>
+Über dieses Dialogfeld wird Syntax für den Erweiterungsbefehl STATS WEIBULL PLOT generiert. Führen Sie folgende Syntax aus, um Hilfe für diesen Befehl anzuzeigen:
+</p>
+<p class="codeblock">STATS WEIBULL PLOT /HELP.</p>
+
+
+<h2>Anforderungen</h2>
+Für diese Prozedur ist SPSS Statistics Version 20 mit Fixpack 1 oder höher erforderlich.  Sie kann
+auch mit einem Grafikhotfix für Version 19 ausgeführt werden.  Der Hotfix kann über den Technical Support bezogen werden.
+<p>
+Für die Prozedur sind Python Essentials
+und der Erweiterungsbefehl STATS WEIBULL PLOT erforderlich.
+Beachten Sie, dass die Installation der Erweiterung einen zusätzlichen Schritt erfordert,
+um die Diagrammvorlagendatei einzurichten. Einzelheiten finden Sie in den Anweisungen in der Readme-Datei der Erweiterung.
+</p>
+</body>
+<p style="font-size:80%;"> Copyright IBM Corp. 2012, 2016</p>
+</html>
