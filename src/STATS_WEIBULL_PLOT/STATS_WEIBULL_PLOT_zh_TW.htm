@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content=
+  "text/html; charset=utf-8">
+
+  <title>Weibull 機率圖</title>
+  <style type="text/css">
+
+  <!-- 
+
+  H1 {font-weight:bold; color:#006699; font-size:125%; }
+  H2 {font-weight:bold; color:#006699; font-size:110%; }
+  TABLE {font-size:100%;}
+
+  /* paragraph tags */
+  .step {text-indent: -1.3em; margin-left:1.3em; margin-top: 0px;}
+  .menuselection {margin-left:10px}
+  .bullet {list-style-type: disc;margin-top:12px; margin-left:36px; text-indent:-1em; }
+  .codeblock {background-color: #ffffe6; display:block; margin-left:5px; padding:5px;}
+
+  /* inline tags */
+  .screen {font-weight:bold; color:#408080}                       /*** used refer to on-screen text ***/
+  .name {font-style: italic}                                                       /*** used to tag names, such as variable names, file names, and so forth ***/
+  .runinhead {font-weight: bold} 
+  .superscript {vertical-align:super; font-size:80%}
+  .subscript {vertical-align:sub; font-size:80%}
+
+
+  --> 
+  </style>
+</head>
+<body>
+<h1>Weibull 機率圖</h1>
+此程序會產生失敗及暫停資料集的 Weibull 圖。每一個觀察值都包含時間值、類型值（失敗或暫停），以及該時間及計數的觀察值計數。暫停代表尚未失敗的觀察值，即資料為向右設限。
+<p><span class="runinhead">時間</span> 選取指出此觀察值時間的變數。
+時間必須是正數。它們可能指出標準行事曆數量（如月數），或可能為工程數量術語（如使用週期）。這不是 SPAA 時間變數。
+</p>
+
+<p><span class="runinhead">計數</span> 選擇性地選取保留此觀察值實例計數的變數。如果已忽略，則假設計數為 1。
+</p>
+
+<p><span class="runinhead">失敗及暫停</span> 選擇性地指定變數，以指出觀察值的類型：失敗或暫停。
+如果未選取變數，則所有觀察值都假設為失敗。
+</p>
+<p><span class="runinhead">失敗碼及暫停碼</span></p> 指出字串，其可指出觀察值為失敗還是暫停。
+<p class="bullet">* 透過分析會捨棄具有任何其他值的觀察值。</p>
+<p><span class="runinhead">ID 變數</span> 選擇性地指定字串變數，其值（第一個觀察值）應用於標記輸出。
+</p>
+
+<h2>選項</h2>
+<p><span class="runinhead">圖表標題</span> 指定圖表的標題。如果文字 )ID 發生在標題文字中，且已指定 ID 變數，則該變數的值會插入圖表標題的該點上。
+</p>
+<p><span class="runinhead">註釋</span> 指定註釋，以隨時間標籤，在 X 軸上顯示。現行日期和時間會自動附加至註釋。
+</p>
+<h2>儲存(V)</h2>
+<p><span class="runinhead">圖形資料的資料集名稱</span> 指定資料集名稱，以便產生包含圖形中繪製之資料的資料集。
+</p>
+
+<p><span class="runinhead">圖形資料 SAV 檔</span> 指定檔名（其中包括 SAV 副檔名），從而產生資料檔，其中包含在圖形中繪製的資料。內容將與資料集相同。</p>
+
+<p><span class="runinhead">圖形資料文字檔</span> 指定檔名，從而產生 CSV 格式的檔案，其中包含在圖形中繪製的資料。</p>
+
+<p><span class="runinhead">文字檔模式</span> 如果建立文字檔，則指定是改寫先前的內容，還是附加到檔案。如果附加，則結構（包括存在或不存在 ID 變數）必須與先前的內容相同。</p>
+
+
+<h2>其他特性</h2>
+<p>
+此對話框會產生適用於 STATS WEIBULL PLOT 延伸指令的語法。若要顯示此指令的說明，請執行下列語法：</p>
+<p class="codeblock">STATS WEIBULL PLOT /HELP.</p>
+
+
+<h2>需求</h2>
+此程序需要 SPSS Statistics 第 20 版本（含 Fix Pack 1）或更新版本。它還可以與第 19 版的圖形緊急修復程式搭配執行。如需該緊急修復程式，請與技術支援中心聯絡。
+<p>
+此程序需要 Python Essentials 及 STATS WEIBULL PLOT 延伸指令。請注意，安裝延伸需要額外的步驟，以設定圖表範本檔案。請參閱延伸 Readme 檔中的指示，以取得詳細資料。</p>
+</body>
+<p style="font-size:80%;"> Copyright IBM Corp. 2012, 2016</p>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content=
+  "text/html; charset=utf-8">
+<title>Tracé de probabilités de Weibull</title>
+  <style type="text/css">
+
+  <!-- 
+
+  H1 {font-weight:bold; color:#006699; font-size:125%; }
+  H2 {font-weight:bold; color:#006699; font-size:110%; }
+  TABLE {font-size:100%;}
+
+  /* paragraph tags */
+  .step {text-indent: -1.3em; margin-left:1.3em; margin-top: 0px;}
+  .menuselection {margin-left:10px}
+  .bullet {list-style-type: disc;margin-top:12px; margin-left:36px; text-indent:-1em; }
+  .codeblock {background-color: #ffffe6; display:block; margin-left:5px; padding:5px;}
+
+  /* inline tags */
+  .screen {font-weight:bold; color:#408080}                       /*** used refer to on-screen text ***/
+  .name {font-style: italic}                                                       /*** used to tag names, such as variable names, file names, and so forth ***/
+  .runinhead {font-weight: bold} 
+  .superscript {vertical-align:super; font-size:80%}
+  .subscript {vertical-align:sub; font-size:80%}
+
+
+  --> 
+  </style>
+</head>
+<body>
+<h1>Tracé de probabilités de Weibull</h1>
+Cette procédure génère un tracé de Weibull pour un jeu de données de défaillances et d'interruptions.  Chaque observation inclut une valeur d'heure, une valeur de type (échec ou interruption) et un nombre d'observations de cette heure et de ce nombre.
+Les interruptions correspondent aux observations qui n'ont pas encore échoué, c'est-à-dire, les observations dont les données de droite sont censurées.
+
+<p><span class="runinhead">Heure :</span>
+Sélectionnez la variable qui indique l'heure de l'observation.
+Les heures doivent être positives.  Elles peuvent indiquer des quantités standard, telles que des mois, ou des quantités d'ingénierie, telles que des cycles d'utilisation.  Il ne s'agit pas d'une variable d'heure SPSS.</p>
+
+<p><span class="runinhead">Effectifs :</span> Si vous le souhaitez, sélectionnez la variable qui détient le nombre d'instances pour cette observation.  Dans le cas contraire, un effectif de 1 est pris en compte.</p>
+
+<p><span class="runinhead">Défaillances et interruptions :</span> Si vous le souhaitez, spécifiez une variable pour indiquer le type de l'observation (défaillance ou interruption).
+Si aucune variable n'est sélectionnée, toutes les observations sont considérées comme étant défaillantes.</p>
+<p><span class="runinhead">Code de défaillance et code d'interruption :</span></p>
+Indiquez la chaîne qui détermine si l'observation est défaillante ou interrompue.
+<p class="bullet">* Les observations comportant d'autres valeurs sont supprimées de l'analyse.</p>
+<p><span class="runinhead">Variable ID :</span> Si vous le souhaitez, vous pouvez spécifier une variable de chaîne dont la valeur (première observation) doit être utilisée pour étiqueter la sortie.</p>
+
+<h2>Options</h2>
+<p><span class="runinhead">Titre du graphique :</span> Attribuez un titre au graphique.
+Si le texte )ID apparaît dans le texte du titre et qu'une variable ID est spécifiée, la valeur de cette variable est insérée dans le titre du graphique à ce point.</p>
+<p><span class="runinhead">Annotation :</span> Indiquez l'annotation à afficher sur l'axe des X avec le libellé Heure.  La date et l'heure en cours sont automatiquement ajoutés à l'annotation.</p>
+<h2>Sauvegarder</h2>
+<p><span class="runinhead">Nom du jeu de données graphiques  :</span> Indiquez le nom du jeu de données afin de générer le jeu de données contenant les données tracées dans le graphique.</p>
+
+<p><span class="runinhead">Fichier sav des données graphiques</span> : Spécifiez un nom de fichier, avec l'extension sav, pour générer un fichier de données contenant les données tracées dans le graphique. Le contenu est identique au jeu de données. </p>
+
+<p><span class="runinhead">Fichier texte des données graphiques</span> : Spécifiez un nom de fichier pour générer un fichier au format csv contenant les données tracées dans le graphique. </p>
+
+<p><span class="runinhead">Mode du fichier texte</span> : Si vous créez un fichier texte, indiquez si le contenu précédent doit être remplacé ou si le nouveau contenu doit être ajouté au fichier. Dans ce second cas, la structure, avec la présence ou l'absence d'une variable id, doit être identique à celle du contenu précédent. </p>
+
+
+<h2>Fonctions supplémentaires</h2>
+<p>
+Cette boîte de dialogue génère une syntaxe pour la commande d'extension STATS WEIBULL PLOT. Pour afficher l'aide de cette commande, exécutez la syntaxe suivante :
+</p>
+<p class="codeblock">STATS WEIBULL PLOT /HELP.</p>
+
+
+<h2>Conditions requises</h2>
+Cette procédure requiert SPSS Statistics version 20 avec le groupe de correctifs 1 ou ultérieur.  Elle peut également être exécutée avec un correctif logiciel de graphiques pour la version 19.  Contactez le support technique pour obtenir le correctif logiciel.
+<p>
+La procédure requiert Python Essentials et la commande d'extension STATS WEIBULL PLOT.  Notez que l'installation de l'extension requiert une étape supplémentaire pour configurer le fichier modèle de graphique. Pour plus de détails, reportez-vous aux instructions du fichier Readme de l'extension. </p>
+</body>
+<p style="font-size:80%;"> Copyright IBM Corp. 2012, 2016</p>
+</html>

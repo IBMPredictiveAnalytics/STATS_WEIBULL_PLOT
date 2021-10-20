@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content=
+  "text/html; charset=utf-8">
+
+  <title>威布尔概率图</title>
+  <style type="text/css">
+
+  <!-- 
+
+  H1 {font-weight:bold; color:#006699; font-size:125%; }
+  H2 {font-weight:bold; color:#006699; font-size:110%; }
+  TABLE {font-size:100%;}
+
+  /* paragraph tags */
+  .step {text-indent: -1.3em; margin-left:1.3em; margin-top: 0px;}
+  .menuselection {margin-left:10px}
+  .bullet {list-style-type: disc;margin-top:12px; margin-left:36px; text-indent:-1em; }
+  .codeblock {background-color: #ffffe6; display:block; margin-left:5px; padding:5px;}
+
+  /* inline tags */
+  .screen {font-weight:bold; color:#408080}                       /*** used refer to on-screen text ***/
+  .name {font-style: italic}                                                       /*** used to tag names, such as variable names, file names, and so forth ***/
+  .runinhead {font-weight: bold} 
+  .superscript {vertical-align:super; font-size:80%}
+  .subscript {vertical-align:sub; font-size:80%}
+
+
+  --> 
+  </style>
+</head>
+<body>
+<h1>威布尔概率图</h1>
+此过程生成一组故障和挂起数据的威布尔图。每个个案都包含一个时间值、一个类型值（故障或挂起）以及该时间和类型的个案计数。
+挂起表示尚未失败的个案，即，数据被右检剔。
+<p><span class="runinhead">时间</span>  请选择指示此个案的时间的变量。时间必须是正数。时间可能指示月份数之类的标准日历数量，也可能用工程量（例如使用周期）表示。这不是 SPSS 时间变量。
+</p>
+
+<p><span class="runinhead">计数</span> （可选）请选择用于存放此个案的实例计数的变量。如果省略此项，那么将假定计数为 1。
+</p>
+
+<p><span class="runinhead">故障和挂起</span> （可选）请指定用于指示个案类型为故障还是挂起的变量。如果未选择变量，那么所有个案都假定为故障。
+</p>
+<p><span class="runinhead">故障代码和挂起代码</span></p> 请指定表示个案是故障还是挂起的字符串。<p class="bullet">* 分析中将废弃具有任何其他值的个案。
+</p>
+<p><span class="runinhead">ID 变量</span> （可选）请指定其值（第一个个案）应该用来对输出进行标注的字符串变量。
+</p>
+
+<h2>选项</h2>
+<p><span class="runinhead">图表标题</span> 请指定图表的标题。如果文本 )ID 出现在标题文本中，并且指定了 ID 变量，那么该变量的值将插入到图表标题中的该位置处。
+</p>
+<p><span class="runinhead">注释</span> 请指定将与时间标签一起显示在 X 轴上的注释。当前日期和时间将自动追加到该注释。
+</p>
+<h2>保存(V)</h2>
+<p><span class="runinhead">图形数据数据集名称</span> 请指定数据集名称，以生成包含图形中绘制的数据的数据集。
+</p>
+
+<p><span class="runinhead">图形数据 Sav 文件</span> 请指定文件名（包括 sav 扩展名），以生成包含图形中绘制的数据的数据文件。
+内容将与数据集相同。</p>
+
+<p><span class="runinhead">图形数据文本文件</span> 请指定文件名，以生成包含图形中绘制的数据的 csv 格式的文件。
+</p>
+
+<p><span class="runinhead">文本文件方式</span> 如果创建文本文件，请指定是覆盖先前的内容还是附加到文件。
+如果附加，那么结构（包括存在或不存在标识变量）必须与先前内容相同。</p>
+
+
+<h2>其他功能部件</h2>
+<p>
+此对话框将生成 STATS WEIBULL PLOT 扩展命令的语法。要显示此命令的帮助，请运行以下语法：</p>
+<p class="codeblock">STATS WEIBULL PLOT /HELP.</p>
+
+
+<h2>要求</h2>
+此过程需要带有 FP1 的 SPSS Statistics V20 或更高版本。此过程还可以在安装了 V19 的图形最新修订程序的情况下运行。请与技术支持人员联系以获取最新修订程序。
+<p>
+此过程需要 Python Essentials 和 STATS WEIBULL PLOT 扩展命令。请注意，安装扩展需要额外的步骤来设置图表模板文件。有关详细信息，请参阅扩展自述文件中的指示信息。</p>
+</body>
+<p style="font-size:80%;"> Copyright IBM Corp. 2012, 2016</p>
+</html>

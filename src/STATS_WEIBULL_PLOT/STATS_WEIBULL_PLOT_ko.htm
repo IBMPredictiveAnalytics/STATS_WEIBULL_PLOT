@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content=
+  "text/html; charset=utf-8">
+<title>Weibull 확률 도표</title>
+  <style type="text/css">
+
+  <!-- 
+
+  H1 {font-weight:bold; color:#006699; font-size:125%; }
+  H2 {font-weight:bold; color:#006699; font-size:110%; }
+  TABLE {font-size:100%;}
+
+  /* paragraph tags */
+  .step {text-indent: -1.3em; margin-left:1.3em; margin-top: 0px;}
+  .menuselection {margin-left:10px}
+  .bullet {list-style-type: disc;margin-top:12px; margin-left:36px; text-indent:-1em; }
+  .codeblock {background-color: #ffffe6; display:block; margin-left:5px; padding:5px;}
+
+  /* inline tags */
+  .screen {font-weight:bold; color:#408080}                       /*** used refer to on-screen text ***/
+  .name {font-style: italic}                                                       /*** used to tag names, such as variable names, file names, and so forth ***/
+  .runinhead {font-weight: bold} 
+  .superscript {vertical-align:super; font-size:80%}
+  .subscript {vertical-align:sub; font-size:80%}
+
+
+  --> 
+  </style>
+</head>
+<body>
+<h1>Weibull 확률 도표</h1>
+이 프로시저는 일련의 실패 및 일시중단 데이터에 대한
+Weibull 도표를 생성합니다. 각 케이스에는 시간 값, 유형 값(실패 또는 일시중단),
+해당 시간 및 빈도에 해당하는 케이스의 빈도가 포함됩니다.
+일시중단은 케이스가 아직 실패하지 않아 데이터가
+오른쪽 중도절단된 상태임을 나타냅니다. <p><span class="runinhead">시간</span>
+이 케이스에 대한 시간을 나타내는 변수를 선택하십시오.
+시간은 양수여야 합니다. 즉, 표준 달력의 양(예: 월)을 나타낼 수 있으며
+엔지니어링의 양(예: 사용 주기)을 나타낼 수도 있습니다. SPSS 시간 변수는 아닙니다.</p>
+
+<p><span class="runinhead">빈도</span> 선택적으로
+이 케이스의 인스턴스의 빈도를 포함하는 변수를 선택하십시오. 생략하면 빈도 1이 사용됩니다.</p>
+
+<p><span class="runinhead">실패 및 일시중단</span> 선택적으로
+케이스의 유형, 즉 실패 또는 일시중단을 나타내는 변수를 지정하십시오.
+변수를 선택하지 않은 경우 모든 케이스가 실패로 간주됩니다.</p>
+<p><span class="runinhead">실패 코드 및 일시중단 코드</span></p>
+케이스가 실패인지 일시중단인지를 나타내는 문자열입니다.
+<p class="bullet">* 다른 값이 있는 케이스는 분석에서
+삭제됩니다. </p>
+<p><span class="runinhead">ID 변수</span> 선택적으로 값(첫 번째 케이스)이 출력 레이블을
+지정하는 데 사용되는 문자열 값을 지정하십시오.</p>
+
+<h2>옵션</h2>
+<p><span class="runinhead">도표 제목</span> 도표의 제목을 지정하십시오.
+제목 텍스트에 텍스트 ID가 있고 ID 변수가 지정되면
+해당 변수의 값이 도표 제목에 삽입됩니다.</p>
+<p><span class="runinhead">주석</span> 시간 레이블과 함께
+X축에 표시할 주석을 지정하십시오. 현재 날짜 및 시간이
+주석에 자동으로 추가됩니다.</p>
+<h2>저장</h2>
+<p><span class="runinhead">그래프 데이터 세트 이름</span> 그래프에 도표화된 데이터를 포함하는
+데이터 세트를 생성하려면 데이터 세트 이름을
+지정하십시오.</p>
+
+<p><span class="runinhead">그래프 데이터 Sav 파일</span> 그래프에 도표화된
+데이터가 포함된 데이터 세트를 생성하려면 sav 확장자를 포함한 파일 이름을
+지정하십시오. 내용은 데이터 세트와 동일합니다. </p>
+
+<p><span class="runinhead">그래프 데이터 텍스트 파일</span> 그래프에 도표화된
+데이터가 포함된 csv 형식의 파일을 생성하려면 파일 이름을 지정하십시오. </p>
+
+<p><span class="runinhead">텍스트 파일 모드</span> 텍스트 파일을 생성하는 경우
+이전 내용을 덮어쓸지 또는 파일에 추가할지 여부를 지정하십시오.
+추가할 경우 id 변수의 유무를 포함한 구조는 이전 내용과 동일해야
+합니다. </p>
+
+
+<h2>추가 기능</h2>
+<p>
+이 대화 상자는 STATS WEIBULL PLOT 확장 명령문에 대한
+  명령문을 생성합니다. 이 명령에 대한 도움말을 표시하려면 다음 구문을 실행하십시오.
+</p>
+<p class="codeblock">STATS WEIBULL PLOT /HELP.</p>
+
+
+<h2>요구 사항</h2>
+이 프로시저를 실행하려면 SPSS Statistics 버전 20 FixPack1 이상이 있어야 합니다. 또한 버전 19에 대한
+그래픽 긴급 수정을 실행할 수 있습니다. 긴급 수정에 대해서는 기술 지원에 문의하십시오.
+<p>
+이 프로시저를 실행하려면
+Python Essentials 및 STATS WEIBULL PLOT 확장 명령문이 필요합니다. 확장을 설치하려면
+도표 양식 파일을 설정하는 추가 단계가 필요합니다. 자세한 내용은 확장 readme 파일의
+지시사항을 참조하십시오.
+</p>
+</body>
+<p style="font-size:80%;"> Copyright IBM Corp. 2012, 2016</p>
+</html>

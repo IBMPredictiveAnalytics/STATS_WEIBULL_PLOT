@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content=
+
+"text/html; charset=utf-8">
+
+  <title>ワイブル確率プロット</title>
+  <style type="text/css">
+
+  <!-- 
+
+  H1 {font-weight:bold; color:#006699; font-size:125%; }
+  H2 {font-weight:bold; color:#006699; font-size:110%; }
+  TABLE {font-size:100%;}
+
+  /* paragraph tags */
+  .step {text-indent: -1.3em; margin-left:1.3em; margin-top: 0px;}
+  .menuselection {margin-left:10px}
+  .bullet {list-style-type: disc;margin-top:12px; margin-left:36px; text-indent:-1em; }
+  .codeblock {background-color: #ffffe6; display:block; margin-left:5px; padding:5px;}
+
+  /* inline tags */
+  .screen {font-weight:bold; color:#408080}                       /*** used refer to on-screen text ***/
+  .name {font-style: italic}                                                       /*** used to tag names, such as variable names, file names, and so forth ***/
+  .runinhead {font-weight: bold} 
+  .superscript {vertical-align:super; font-size:80%}
+  .subscript {vertical-align:sub; font-size:80%}
+
+
+  --> 
+  </style>
+</head>
+<body>
+<h1>ワイブル確率プロット</h1>
+この手順では、1 セットの故障データと停止データに関するワイブル プロットを作成します。各ケースには、時間値、タイプ値 (故障または停止)、およびその時間と度数のケースの度数が含まれています。停止は、まだ故障していないケース、つまりデータが右側打ち切りであることを表します。
+
+<p><span class="runinhead">時間:</span>
+このケースの時間を示す変数を選択します。
+時間は正の数値でなければなりません。時間は標準のカレンダー数量 (月など) で示される場合や、技術的な数量 (使用サイクルなど) で示される場合があります。これは SPSS の時間変数ではありません。
+
+</p>
+
+<p><span class="runinhead">度数:</span> 必要に応じて、このケースのインスタンスの度数を保持している変数を選択します。省略すると、度数 1 が想定されます。
+</p>
+
+<p><span class="runinhead">故障と停止:</span> 必要に応じて、ケースのタイプ (故障または停止) を示す変数を指定します。
+変数を選択しなかった場合は、すべてのケースが故障と想定されます。
+</p>
+<p><span class="runinhead">故障コードと停止コード:</span></p>
+ケースが故障か停止かを示す文字列を示します。
+<p class="bullet">* これ以外の値を持つケースは分析から除外されます。</p>
+<p><span class="runinhead">ID 変数:</span> 必要に応じて、出力にラベルを付けるために使用される値 (最初のケース) を持つ文字型変数を指定します。
+</p>
+
+<h2>オプション</h2>
+<p><span class="runinhead">図表の表題:</span> 図表の表題を指定します。テキスト「)ID」が表題に含まれている場合に ID 変数を指定すると、その変数の値が図表の表題のその位置に挿入されます。
+</p>
+<p><span class="runinhead">注釈:</span> X 軸に時間ラベルとともに表示される注釈を指定します。注釈には、現在の日付と時刻が自動的に付加されます。
+</p>
+<h2>保存</h2>
+<p><span class="runinhead">グラフ データのデータセット名:</span> グラフでプロットされるデータを含んでいるデータセットを作成する場合に、データセット名を指定します。
+
+</p>
+
+<p><span class="runinhead">グラフ データの sav ファイル</span> グラフにプロットしたデータを含むデータ ファイルを作成するためのファイル名を、sav の拡張子も含めて指定します。内容はデータセットと同じになります。</p>
+
+<p><span class="runinhead">グラフ データのテキスト ファイル</span> グラフにプロットしたデータを含む csv 形式ファイルを生成するためのファイル名を指定します。</p>
+
+<p><span class="runinhead">テキスト ファイル モード</span> テキスト ファイルを作成する場合に、以前の内容を上書きするか、ファイルに追加するかを指定します。
+追加する場合は、ID 変数の有無も含め、以前の内容と同じ構造でなければなりません。</p>
+
+
+<h2>その他の機能</h2>
+<p>
+このダイアログは、STATS WEIBULL PLOT 拡張コマンドのシンタックスを生成します。このコマンドのヘルプを表示するには、次のシンタックスを実行します。
+</p>
+<p class="codeblock">STATS WEIBULL PLOT /HELP.</p>
+
+
+<h2>要件</h2>
+この手順には、SPSS Statistics バージョン 20 フィックスパック 1 以降が必要です。また、グラフィックのホット フィックスが適用されたバージョン 19 でも実行できます。ホット フィックスについては、テクニカル サポートにお問い合わせください。
+<p>
+この手順には、Python Essentials と STATS WEIBULL PLOT 拡張コマンドが必要です。
+この拡張機能をインストールするには、図表テンプレート ファイルを別途セットアップする必要があります。詳しくは、拡張機能の readme ファイルに記載されている説明を参照してください。
+</p>
+</body>
+<p style="font-size:80%;"> Copyright IBM Corp. 2012, 2016</p>
+</html>

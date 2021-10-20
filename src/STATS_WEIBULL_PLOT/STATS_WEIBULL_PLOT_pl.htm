@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content=
+  "text/html; charset=utf-8">
+<title>Wykres prawdopodobieństwa Weibulla</title>
+  <style type="text/css">
+
+  <!-- 
+
+  H1 {font-weight:bold; color:#006699; font-size:125%; }
+  H2 {font-weight:bold; color:#006699; font-size:110%; }
+  TABLE {font-size:100%;}
+
+  /* paragraph tags */
+  .step {text-indent: -1.3em; margin-left:1.3em; margin-top: 0px;}
+  .menuselection {margin-left:10px}
+  .bullet {list-style-type: disc;margin-top:12px; margin-left:36px; text-indent:-1em; }
+  .codeblock {background-color: #ffffe6; display:block; margin-left:5px; padding:5px;}
+
+  /* inline tags */
+  .screen {font-weight:bold; color:#408080}                       /*** used refer to on-screen text ***/
+  .name {font-style: italic}                                                       /*** used to tag names, such as variable names, file names, and so forth ***/
+  .runinhead {font-weight: bold} 
+  .superscript {vertical-align:super; font-size:80%}
+  .subscript {vertical-align:sub; font-size:80%}
+
+
+  --> 
+  </style>
+</head>
+<body>
+<h1>Wykres prawdopodobieństwa Weibulla</h1>
+Ta procedura generuje wykres rozkładu Weibulla dla zbioru danych dotyczących porażek i zawieszeń.  Każda obserwacja zawiera wartość czasu, wartość typu (porażka lub zawieszenie) oraz liczbę obserwacji w danym czasie i przy danej liczebości.
+Zawieszenie oznacza obserwacje, dla których nie wystąpiła dotąd porażka, tj. dane zostały prawidłowo ocenzurowane.
+
+<p><span class="runinhead">Czas</span>
+Wybierz zmienną określającą godzinę dla tej obserwacji.
+Wartości czasu muszą być liczbami dodatnimi.  Mogą to być standardowe wielkości wartości kalendarzowe, takie jak miesiące, lub wielkości techniczne, takie jak cykle użycia.  Nie jest to zmienna czasu programu SPSS.</p>
+
+<p><span class="runinhead">Liczebności</span> Opcjonalnie wybierz zmienną zawierającą liczebność instancji tej obserwacji.  W razie pominięcia tej opcji zakłada się, że jej wartość to 1.</p>
+
+<p><span class="runinhead">Porażki i zawieszenia</span> Opcjonalnie wskaż zmienną określającą typ obserwacji: porażka lub zawieszenie.
+Jeśli zmiennej nie wybrano, wszystkie obserwacje są z założenia traktowane jako porażki.</p>
+<p><span class="runinhead">Kod porażki i kod zawieszenia</span></p>
+Wskaż łańcuch określający, czy typ obserwacji to porażka, czy zawieszenie.
+<p class="bullet">* Obserwacje z innymi wartościai są wykluczane
+z analizy.</p>
+<p><span class="runinhead">Zmienna ID</span> Opcjonalnie wskaż zmienną łańcuchową, której wartość (pierwsza obserwacja) powinna być używana do etykietowania danych wynikowych.</p>
+
+<h2>Opcje</h2>
+<p><span class="runinhead">Tytuł wykresu</span> Podaj tytuł wykresu.
+W przypadku wystąpienia tekstu )ID w tytule, jeśli jednocześnie podano zmienną ID, wartość tej zmiennej zostanie wstawiona w tytule wykresu w tym punkcie.</p>
+<p><span class="runinhead">Adnotacja</span> Wprowadź tekst adnotacji, który ma być wyświetlany na osi X wraz z etykietą określającą czas.  Do adnotacji są automatycznie dołączane data i godzina.</p>
+<h2>Zapisz</h2>
+<p><span class="runinhead">Nazwa zbioru danych wykresu</span> Wskaż nazwę zbioru danych w celu wygenerowania zbioru danych zawierającego dane wykreślone na wykresie.</p>
+
+<p><span class="runinhead">Plik sav z danymi wykresu</span> Określ nazwę pliku z rozszerzeniem sav w celu utworzenia pliku danych zawierającego wykreślone dane.  Zawartość tego pliku będzie taka sama jak zawartość zbioru danych.</p>
+
+<p><span class="runinhead">Plik tekstowy z danymi wykresu</span> Określ nazwę pliku w celu utworzenia pliku w formacie csv zawierającego wykreślone dane.</p>
+
+<p><span class="runinhead">Tryb pliku tekstowego</span> W przypadku tworzenia pliku
+tekstowego, określ, czy nadpisać poprzednią zawartość, czy dołączyć ją do pliku.
+W przypadku dołączania, struktura, w tym obecność lub brak identyfikatora zmiennej,
+musi być taka sama jak poprzednia zawartość.</p>
+
+
+<h2>Funkcje dodatkowe</h2>
+<p>
+To okno dialogowe generuje składnię dla komendy rozszerzającej STATS WEIBULL PLOT. Aby wyświetlić pomoc dotyczącą tej komendy,
+uruchom następującą komendę:
+</p>
+<p class="codeblock">STATS WEIBULL PLOT /HELP.</p>
+
+
+<h2>Wymagania</h2>
+Ta procedura wymaga produktu SPSS Statistics w wersji 20 z pakietem FixPack1 lub nowszym.  Może być ona również uruchamiana w wersji 19 z zainstalowanym pakietem poprawek dotyczących grafiki.  O pakiet poprawek należy zwrócić się do pracowników wsparcia technicznego.
+<p>
+Ta procedura wymaga dodatku Python Essentials oraz komendy rozszerzającej STATS WEIBULL PLOT.  Należy pamiętać, że podczas instalacji rozszerzenia wymagane jest wykonanie dodatkowego kroku w celu skonfigurowania pliku szablonu wykresu.  Szczegółowe informacje
+zawiera plik readme dołączony do rozszerzenia.
+</p>
+</body>
+<p style="font-size:80%;"> Copyright IBM Corp. 2012, 2016</p>
+</html>

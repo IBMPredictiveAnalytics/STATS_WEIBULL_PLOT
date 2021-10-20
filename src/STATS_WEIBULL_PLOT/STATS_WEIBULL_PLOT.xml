@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?><Extension debug="false" version="1.0" xmlns="http://spss.com/clementine/extensions" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://spss.com/clementine/extensions http://xml.spss.com/clementine/extensions/CLEFSpecificationFile.xsd">
+  <ExtensionDetails copyright="Licensed Materials - Property of IBM.  IBM SPSS Products: Statistics Common (C) Copyright IBM Corp. 1989, 2019.  US Government Users Restricted Rights - Use, duplication or  disclosure restricted by GSA ADP Schedule Contract with IBM Corp." description="" id="STATS_WEIBULL_PLOT" label="" provider="SPSS, Inc." providerTag="spss" version="1.0"/>
+  <Resources>
+    <Bundle id="bundle557" path="STATS_WEIBULL_PLOT" type="properties"/>
+  </Resources>
+  <CommonObjects>
+    <Actions>
+      <Action id="STATS_WEIBULL_PLOT_action" imagePath="IBMdialogicon.png" label="Weibull Plot..." labelKey="STATS_WEIBULL_PLOT_action.LABEL"/>
+    </Actions>
+  </CommonObjects>
+  <UserInterface>
+    <Controls>
+      <MenuItem action="STATS_WEIBULL_PLOT_action" actionIDToName="" installToGlobalCustomMenu="false" menuFrame="all" menuVersion="-1" offset="3" previousId="" showIcon="true" spssMenu="Graphs"/>
+    </Controls>
+  </UserInterface>
+  <Node id="STATS_WEIBULL_PLOT" label="Weibull Plot" labelKey="STATS_WEIBULL_PLOT.LABEL" type="modelBuilder">
+    <Properties>
+      <Property name="STATS_WEIBULL_PLOT" syntax="STATS WEIBULL PLOT %%time%% %%counts%% %%Events%% %%failcode%% %%suspcode%% %%itemid%%\n/OPTIONS %%title%% %%annotation%% \n/SAVE %%graphds%% %%graphfile%%  %%textfile%% %%filemode%%."/>
+      <Property description="false" name="STATS_WEIBULL_PLOT_modal"/>
+      <Property description="" descriptionKey="source_vars_tooltip.LABEL" isList="true" label="Variables:" labelKey="source_vars.LABEL" name="source_vars" selectionPool="source_fields" syntax="%%ThisValue%%" valueType="field"/>
+      <Property description="Count for event.  If no variable is specified, the count is assumed to be 1" descriptionKey="counts_tooltip.LABEL" isList="true" label="Counts:" labelKey="counts.LABEL" name="counts" selectionPool="source_fields" syntax="COUNT=%%ThisValue%%" valueType="field"/>
+      <Property description="Choose a time variable.  This is not an SPSS time variable but indicates the lifetime in ordinary time units or another appropriate value" descriptionKey="time_tooltip.LABEL" isList="true" isRequired="true" label="Time:" labelKey="time.LABEL" name="time" selectionPool="source_fields" syntax="TIME=%%ThisValue%%" valueType="field"/>
+      <Property description="Codes indicating failure or suspension.  If omitted, all cases are considered failures." descriptionKey="Events_tooltip.LABEL" isList="true" label="Failures and Suspensions:" labelKey="Events.LABEL" name="Events" selectionPool="source_fields" syntax="TYPE=%%ThisValue%%" valueType="field"/>
+      <Property defaultValue="S" description="Code that stands for suspension (right censoring)" descriptionKey="suspcode_tooltip.LABEL" label="Suspension Code:" labelKey="suspcode.LABEL" name="suspcode" syntax="SUSPENSION=&quot;%%ThisValue%%&quot;" valueType="string"/>
+      <Property defaultValue="F" description="Code that stands for failure" descriptionKey="failcode_tooltip.LABEL" isRequired="true" label="Failure Code:" labelKey="failcode.LABEL" name="failcode" syntax="FAILURE=&quot;%%ThisValue%%&quot;" valueType="string"/>
+      <Property defaultValue="Weibull Probability Plot" description="Enter a title for the chart" descriptionKey="title_tooltip.LABEL" isRequired="true" label="Chart Title:" labelKey="title.LABEL" name="title" syntax="TITLE=&quot;%%ThisValue%%&quot;" valueType="string"/>
+      <Property defaultValue="" description="Enter a note to appear at the bottom.  The date and time are automatically appended" descriptionKey="annotation_tooltip.LABEL" label="Annotation:" labelKey="annotation.LABEL" name="annotation" syntax="ANNOTATION=&quot;%%ThisValue%%&quot;" valueType="string"/>
+      <Property description="The value of this variable will be used to label the output" descriptionKey="itemid_tooltip.LABEL" isList="true" label="ID variable:" labelKey="itemid.LABEL" name="itemid" selectionPool="source_fields" syntax="ITEMNAME=%%ThisValue%%" valueType="field"/>
+      <Property defaultValue="" description="Enter a dataset name to save the graph data" descriptionKey="graphds_tooltip.LABEL" label="Graph Data Dataset Name:" labelKey="graphds.LABEL" name="graphds" syntax="GRAPHDS=%%ThisValue%%" valueType="fieldName"/>
+      <Property defaultValue="" description="specify a file name including extension  to save the graph data as a sav file" descriptionKey="graphfile_tooltip.LABEL" graphfile_filter="" label="Graph Data Sav File:" labelKey="graphfile.LABEL" name="graphfile" syntax="GRAPHFILE=%%ThisValue%%" valueType="string"/>
+      <Property defaultValue="" description="Specify a filename including extension  to save the graph data in csv format" descriptionKey="textfile_tooltip.LABEL" label="Graph Data Text File:" labelKey="textfile.LABEL" name="textfile" syntax="TEXTFILE=%%ThisValue%%" textfile_filter="All File Types (*.*)|*.*|A^" valueType="string"/>
+      <Property defaultValue="item_177_a" description="choose whether to overwrite or append data" descriptionKey="filemode_tooltip.LABEL" label="Text File Mode" labelKey="filemode.LABEL" name="filemode" syntax="FILEMODE=%%ThisValue%%" valueType="enum">
+        <Enumeration>
+          <Enum description="" descriptionKey="item_177_a_tooltip.LABEL" hasSubGroup="false" label="Overwrite" labelKey="item_177_a.LABEL" mnemonic="O" mnemonicKey="item_177_a_mnemonic.VALUE" syntax="OVERWRITE" value="item_177_a"/>
+          <Enum description="The structure must be the same as previous contents" descriptionKey="item_177_b_tooltip.LABEL" hasSubGroup="false" label="Append" labelKey="item_177_b.LABEL" mnemonic="A" mnemonicKey="item_177_b_mnemonic.VALUE" syntax="APPEND" value="item_177_b"/>
+        </Enumeration>
+      </Property>
+    </Properties>
+    <SelectionPool id="source_fields" type="fields"/>
+    <UserInterface>
+      <Tabs>
+        <Tab helpLink="STATS_WEIBULL_PLOT.htm">
+          <PropertiesPanel>
+            <SourceFieldsBrowser copyFields="false" property="source_vars" selectionPool="source_fields" storage="[real integer date time string]">
+              <Layout columnWeight="1.0" fill="both" gridColumn="0" gridRow="0" gridWidth="1" rowWeight="1.0"/>
+            </SourceFieldsBrowser>
+            <SingleFieldChooserControl mnemonic="C" mnemonicKey="counts_mnemonic.VALUE" property="counts" storage="[real integer]">
+              <Layout columnWeight="1.0" fill="horizontal" gridColumn="2" gridRow="1" gridWidth="1" rowWeight="0.0"/>
+            </SingleFieldChooserControl>
+            <SingleFieldChooserControl mnemonic="T" mnemonicKey="time_mnemonic.VALUE" property="time" storage="[real integer date time]">
+              <Layout columnWeight="1.0" fill="horizontal" gridColumn="2" gridRow="0" gridWidth="1" rowWeight="0.0"/>
+            </SingleFieldChooserControl>
+            <SingleFieldChooserControl mnemonic="F" mnemonicKey="Events_mnemonic.VALUE" property="Events" storage="[real integer date time string]">
+              <Layout columnWeight="1.0" fill="horizontal" gridColumn="2" gridRow="2" gridWidth="1" rowWeight="0.0"/>
+            </SingleFieldChooserControl>
+            <TextBoxControl mnemonic="C" mnemonicKey="suspcode_mnemonic.VALUE" property="suspcode">
+              <Layout columnWeight="1.0" fill="horizontal" gridColumn="2" gridRow="7" gridWidth="1" rowWeight="0.0"/>
+            </TextBoxControl>
+            <TextBoxControl mnemonic="A" mnemonicKey="failcode_mnemonic.VALUE" property="failcode">
+              <Layout columnWeight="1.0" fill="horizontal" gridColumn="2" gridRow="4" gridWidth="1" rowWeight="0.0"/>
+            </TextBoxControl>
+            <PropertiesSubPanel buttonLabel="Options..." buttonLabelKey="options.LABEL" dialogTitle="Options" dialogTitleKey="OptionsSub.TITLE" helpLink="" mnemonic="O" mnemonicKey="options_mnemonic.VALUE">
+              <Layout columnWeight="0.0" fill="none" gridColumn="3" gridRow="0" gridWidth="1" rowWeight="0.0"/>
+              <PropertiesPanel>
+                <TextBoxControl mnemonic="T" mnemonicKey="title_mnemonic.VALUE" property="title">
+                  <Layout columnWeight="1.0" fill="horizontal" gridColumn="0" gridRow="0" gridWidth="1" rowWeight="0.0"/>
+                </TextBoxControl>
+                <TextBoxControl mnemonic="A" mnemonicKey="annotation_mnemonic.VALUE" property="annotation">
+                  <Layout columnWeight="1.0" fill="horizontal" gridColumn="0" gridRow="2" gridWidth="1" rowWeight="1.0"/>
+                </TextBoxControl>
+                <StaticText text="If an item ID is specified, enter )ID to insert it&#10;at that point in the title text" textKey="item_24.LABEL">
+                  <Layout columnWeight="1.0" fill="none" gridColumn="0" gridRow="1" gridWidth="1" rowWeight="0.0"/>
+                </StaticText>
+              </PropertiesPanel>
+            </PropertiesSubPanel>
+            <StaticText text="If no variable is specified,&#10;all cases are treated as failures" textKey="item_59.LABEL">
+              <Layout columnWeight="1.0" fill="none" gridColumn="2" gridRow="3" gridWidth="1" rowWeight="0.0"/>
+            </StaticText>
+            <SingleFieldChooserControl mnemonic="I" mnemonicKey="itemid_mnemonic.VALUE" property="itemid" storage="[string]">
+              <Layout columnWeight="1.0" fill="horizontal" gridColumn="2" gridRow="10" gridWidth="1" rowWeight="1.0"/>
+            </SingleFieldChooserControl>
+            <PropertiesSubPanel buttonDescription="Use this subdialog to save the graph dataset" buttonDescriptionKey="save_tooltip.LABEL" buttonLabel="Save..." buttonLabelKey="save.LABEL" dialogTitle="Save" dialogTitleKey="savesub.TITLE" helpLink="" mnemonic="S" mnemonicKey="save_mnemonic.VALUE">
+              <Layout columnWeight="0.0" fill="none" gridColumn="3" gridRow="1" gridWidth="1" rowWeight="0.0"/>
+              <PropertiesPanel>
+                <TextBoxControl mnemonic="G" mnemonicKey="graphds_mnemonic.VALUE" property="graphds">
+                  <Layout columnWeight="1.0" fill="horizontal" gridColumn="0" gridRow="0" gridWidth="1" rowWeight="0.0"/>
+                </TextBoxControl>
+                <StaticText text="Specify a dataset name to create a dataset&#10;holding the data plotted in the chart" textKey="item_23.LABEL">
+                  <Layout columnWeight="1.0" fill="none" gridColumn="0" gridRow="3" gridWidth="1" rowWeight="0.0"/>
+                </StaticText>
+                <ServerFileChooserControl mnemonic="S" mnemonicKey="graphfile_mnemonic.VALUE" mode="save" property="graphfile">
+                  <Layout columnWeight="1.0" fill="horizontal" gridColumn="0" gridRow="5" gridWidth="1" rowWeight="0.0"/>
+                </ServerFileChooserControl>
+                <ServerFileChooserControl mnemonic="D" mnemonicKey="textfile_mnemonic.VALUE" mode="save" property="textfile">
+                  <Layout columnWeight="1.0" fill="horizontal" gridColumn="0" gridRow="7" gridWidth="1" rowWeight="0.0"/>
+                </ServerFileChooserControl>
+                <RadioButtonGroupControl property="filemode" rows="2" useSubPanel="false">
+                  <Layout columnWeight="1.0" fill="both" gridColumn="0" gridRow="9" gridWidth="1" rowWeight="1.0"/>
+                  <RadioButton property="item_177_a"/>
+                  <RadioButton property="item_177_b"/>
+                </RadioButtonGroupControl>
+              </PropertiesPanel>
+            </PropertiesSubPanel>
+            <StaticText text="This dialog was created using a later version of IBM SPSS Statistics\nand certain features may not function as intended." textKey="v17_warning.LABEL">
+              <Layout columnWeight="1.0" fill="horizontal" gridColumn="0" gridRow="1" gridWidth="1" rowWeight="1.0"/>
+            </StaticText>
+          </PropertiesPanel>
+        </Tab>
+      </Tabs>
+    </UserInterface>
+  </Node>
+</Extension>
