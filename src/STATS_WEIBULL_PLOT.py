@@ -3,7 +3,7 @@
 # *
 # * IBM SPSS Products: Statistics Common
 # *
-# * (C) Copyright IBM Corp. 1989, 2020
+# * (C) Copyright IBM Corp. 1989, 2021
 # *
 # * US Government Users Restricted Rights - Use, duplication or disclosure
 # * restricted by GSA ADP Schedule Contract with IBM Corp. 
@@ -11,7 +11,7 @@
 
 
 __author__ = "SPSS, JKP"
-__version__ = "1.2.1"
+__version__ = "1.2.2"
 
 # history
 # 21-feb-2012 original version
@@ -538,13 +538,18 @@ def Run(args):
         processcmd(oobj, args, weibull, vardict=spssaux.VariableDict())
 
 def getVizTemplatePath(templateName):
-    vizPath = os.path.expanduser("~")
+    vizPathOriginal = os.path.expanduser("~")
+    vizPath = os.path.dirname(os.path.dirname(__file__))
     if sys.platform == 'win32':
-        vizPath = vizPath + "\\Application Data\\SPSSInc\\Graphboard\\templates\\"
+        vizPath = vizPath + "\\Graphboard\\templates\\"
+        if not os.path.exists(vizPath):
+            vizPath = vizPathOriginal + "\\Application Data\\SPSSInc\\Graphboard\\templates\\"
     elif sys.platform.lower().find('darwin') > -1:
-        vizPath = vizPath + "/Library/Application Support/SPSSInc/Graphboard/templates/"
+        vizPath = vizPath + "/Graphboard/templates/"
+        if not os.path.exists(vizPath):
+            vizPath = vizPathOriginal + "/Library/Application Support/SPSSInc/Graphboard/templates/"
     else:
-        vizPath = vizPath + "/.Graphboard/templates/"
+        vizPath = vizPathOriginal + "/.Graphboard/templates/"
 
     vizPath = vizPath + templateName + suffix
     return vizPath
