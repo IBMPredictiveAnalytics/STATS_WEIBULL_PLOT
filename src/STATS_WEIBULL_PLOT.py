@@ -3,7 +3,7 @@
 # *
 # * IBM SPSS Products: Statistics Common
 # *
-# * (C) Copyright IBM Corp. 1989, 2021
+# * (C) Copyright IBM Corp. 1989, 2022
 # *
 # * US Government Users Restricted Rights - Use, duplication or disclosure
 # * restricted by GSA ADP Schedule Contract with IBM Corp. 
@@ -11,7 +11,7 @@
 
 
 __author__ = "SPSS, JKP"
-__version__ = "1.2.2"
+__version__ = "1.2.3"
 
 # history
 # 21-feb-2012 original version
@@ -23,6 +23,8 @@ __version__ = "1.2.2"
 # 27-mar-2015 Protect the copyTemplate function from permission problems
 # 29-jan-2016 Add keyword for saving chart as a file
 # 10-oct-2019 Fix problem when all cases are failures or considered failures
+# 13-jul-2022 Adjust template location for V29 changes
+
 
 # function to create Weibull plot
 
@@ -69,6 +71,16 @@ containing the points plotted in the chart is retained under that name.
 
 /HELP prints this information and does nothing else.
 """
+
+# debugging
+        # makes debug apply only to the current thread
+#try:
+    #import wingdbstub
+    #import threading
+    #wingdbstub.Ensure()
+    #wingdbstub.debugger.SetDebugThreads({threading.get_ident(): 1})
+#except:
+    #pass
 
 suffix = ".viztemplate"
 
@@ -431,9 +443,9 @@ END IF.
         try:
             spss.Submit(cmd2)
         except:
-            raise SystemError(_("""The required template was not found or the required Statistics update is not installed.
-            This procedure requires the Graphboard template Weibull.viztemplate.  It also requires at least Statistics version 20 
-            with fixpack1 or a later version.  For Statistics 19, it needs the hotfix for the cloglog scale."""))
+            raise SystemError(_("""The required template was not found.
+            This procedure requires the Graphboard template Weibull.viztemplate, 
+            which may be copied from the location where this extension is installed."""))
     finally:
         spss.EndProcedure()   # just in case
         spss.Submit("DATASET ACTIVATE %(activeds)s." % locals())
@@ -539,15 +551,26 @@ def Run(args):
 
 def getVizTemplatePath(templateName):
     vizPathOriginal = os.path.expanduser("~")
-    vizPath = os.path.dirname(os.path.dirname(__file__))
+    ###vizPath = os.path.dirname(os.path.dirname(__file__))
+    # Starting with Statistics 29, the version diretory is always "One"
+    spssver = spssaux.getSpssMajorVersion()
+    if spssver >= 29:
+        spssver = "One"
+    else:
+        spssver = str(spssver)
     if sys.platform == 'win32':
-        vizPath = vizPath + "\\Graphboard\\templates\\"
-        if not os.path.exists(vizPath):
-            vizPath = vizPathOriginal + "\\Application Data\\SPSSInc\\Graphboard\\templates\\"
+        # getting around the backslash terminator problem ...
+        vizPath = vizPathOriginal + rf"\Appdata\Roaming\IBM\SPSS Statistics\{spssver}" + r"""\Graphboard\templates\ """[:-1]
+        
+        ###vizPath = vizPath + "\\Graphboard\\templates\\"
+        ###if not os.path.exists(vizPath):
+        ###    vizPath = vizPathOriginal + "\\Application Data\\SPSSInc\\Graphboard\\templates\\"
     elif sys.platform.lower().find('darwin') > -1:
-        vizPath = vizPath + "/Graphboard/templates/"
-        if not os.path.exists(vizPath):
-            vizPath = vizPathOriginal + "/Library/Application Support/SPSSInc/Graphboard/templates/"
+        #vizPath = vizPath + "/Graphboard/templates/"
+        #if not os.path.exists(vizPath):
+        ###vizPath = vizPathOriginal + "/Library/Application Support/SPSSInc/Graphboard/templates/"
+        vizPath = vizPathOriginal + f"/Library/Application Support/IBM/SPSS Statistics/{spssver}/Graphboard/templates/"
+        ###print(f"Mac template location:  {vizPath}")   # debug
     else:
         vizPath = vizPathOriginal + "/.Graphboard/templates/"
 
