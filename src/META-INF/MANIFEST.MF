@@ -1,4 +1,5 @@
 Name: STATS WEIBULL PLOT
+Display-Name: Weibull Plots
 Dialog-Specs: STATS_WEIBULL_PLOT.spd
 Command-Specs: STATS_WEIBULL_PLOT.xml
 Code-Files: STATS_WEIBULL_PLOT.py
@@ -12,7 +13,7 @@ Description: This procedure creates a Weibull probability plot for dat
  rsion 20 plus Fixpack1.  It can be used with version 19 if the hotfix
   for the cloglog scale is installed
 Author: JKP, IBM SPSS, JC, IBM SPSS
-Version: 2.0.2
+Version: 2.0.3
 Product-Version: 24
 Date: 9/6/12
 Categories: graphics Weibull
